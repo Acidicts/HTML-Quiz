@@ -18,7 +18,7 @@ nextButton.addEventListener("click", ()=>{
 
 function startGame(){
     startButton.classList.add("hide")
-    shuffleQuestions=questions.sort(()=>math.random() - 0.5)
+    shuffleQuestions=questions.sort(()=>Math.random() - 0.5)
     currentQuestionIndex=0
     questionContainerElement.classList.remove("hide")
     setNextQuestion()
@@ -34,6 +34,7 @@ function showQuestion(question){
     questionElement.innerText = question.question
     question.answers.forEach((answer)=>{
         const button = document.createElement('button')
+        button.classList.remove("hide")
         button.innerText = answer.text
         button.classList.add("btn")
         if (answer.correct){
@@ -52,26 +53,25 @@ function resetState(){
     }
 }
 
-function selectAnswer(e){
+function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     
     setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children.forEach((button)=>{
-            setStatusClass(button, button.dataset.correct)
-        })
-    )
+    Array.from(answerButtonsElement.children).forEach((button) => {
+        setStatusClass(button, button.dataset.correct)
+    })
     if (shuffleQuestions.length > currentQuestionIndex + 1){
         nextButton.classList.remove("hide")
     }
-    else{
-        startButton.innerText = "Restart"
+    else {
+        startButton.innerText = "restart"
         startButton.classList.remove("hide")
     }
-    if (selectedButton.dataset = correct){
+    if (selectedButton.dataset.correct === correct){
         quizScore++
     }
-    document.getElementById('right-answers').innerText=quizScore
+    document.getElementById('right-answers').innerText = quizScore
 }
 
 function setStatusClass(element, correct){
@@ -85,8 +85,8 @@ function setStatusClass(element, correct){
 }
 
 function clearStatusClass(element) {
-    element.classList('correct')
-    element.classList('wrong')
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
 
 
