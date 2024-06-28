@@ -10,6 +10,7 @@ let shuffleQuestions,currentQuestionIndex;
 let quizScore = 0;
 
 startButton.addEventListener("click", startGame)
+
 nextButton.addEventListener("click", ()=>{
     currentQuestionIndex++
     setNextQuestion()
@@ -19,7 +20,7 @@ nextButton.addEventListener("click", ()=>{
 function startGame(){
     startButton.classList.add("hide")
     shuffleQuestions=questions.sort(()=>Math.random() - 0.5)
-    currentQuestionIndex=0
+    currentQuestionIndex = 0;
     questionContainerElement.classList.remove("hide")
     setNextQuestion()
     quizScore = 0
@@ -31,11 +32,10 @@ function setNextQuestion(){
 }
 
 function showQuestion(question){
-    questionElement.innerText = question.question
+    questionElement.innerText = question.question;
     question.answers.forEach((answer)=>{
         const button = document.createElement('button')
-        button.classList.remove("hide")
-        button.innerText = answer.text
+        button.innerText = answer.text;
         button.classList.add("btn")
         if (answer.correct){
             button.dataset.correct = answer.correct
@@ -68,7 +68,7 @@ function selectAnswer(e) {
         startButton.innerText = "restart"
         startButton.classList.remove("hide")
     }
-    if (selectedButton.dataset.correct === correct){
+    if (selectedButton.dataset = correct){
         quizScore++
     }
     document.getElementById('right-answers').innerText = quizScore
@@ -85,8 +85,8 @@ function setStatusClass(element, correct){
 }
 
 function clearStatusClass(element) {
-    element.classList.remove('correct');
-    element.classList.remove('wrong');
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
 }
 
 
