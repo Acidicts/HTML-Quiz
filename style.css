@@ -1,75 +1,52 @@
-
-:root {
-    --hue-neutral : 200;
-    --hue-wrong : 0;
-    --hue-correct:145;
-}
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
 body {
-    --hue: var(--hue-neutral);
-    padding : 0;
-    margin : 0;
-    display : flex;
-    width : 100vw;
-    height : 100vw;
-    justify-content : center;
-    align-items : center;
-    background-color : hsl(var(--hue), 100%, 20%);
-}
-
-body.correct {
-    --hue : var(--hue-correct);
-}
-
-body.wrong {
-    --hue : var(--hue-wrong)
+    color: #797e83;
+    font-size: 16px;
+    font-family: "Lato", "helvetica Neue", "sans-serif";
+    line-height: 1.5;
+    margin: 0;
+    padding-top: 2.5em;
+    background-color: #8c52ff;
 }
 
 .container {
-    width: 800px;
-    max-width: 80%;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px 2px;
-}
-
-.btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2,auto);
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.btn {
-    --hue: var(--hue-neutral);
-    border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color: hsl(var(--hue), 100%, 50%);
-    border-radius: 20px;
-    padding: 5px 10px;
-    color: white;
-    outline: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    border-color: black;
-}
-
-.start-btn, .next-btn {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.controls {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
-.hide {
-    display: none;
-    visibility: hidden;
+.centered{
+    margin-top:70px;
+    text-align:center;
+    width: 800px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 5px 10px 5px 10px;
+}
+
+h1 {
+    color: #525559;
+    font-weight: 300;
+    font-size: 2.626em;
+    line-height: 1.1;
+    margin-top: 30px;
+}
+
+h2 {
+    color: #999da1;
+    letter-spacing:1px;
+    font-weight: 300;
+    font-size: 1.5em;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+p {
+    margin: .8em 0;
+    font-weight: 300;
+    font-size: 1.125em;
+    line-height: 1.5;
+}
+
+.btn--default{
+
 }
