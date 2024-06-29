@@ -8,7 +8,7 @@ Quiz.prototype.guess = function(answer) {
     if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
         this.score++;
     }
-    this.currentQuestionIndex++
+    this.currentQuestionIndex++;
 }
 
 Quiz.prototype.getCurrentQuestion = function() {
@@ -31,17 +31,17 @@ Question.prototype.isCorrectAnswer = function(choice) {
 
 var QuizUI = {
     displayNext: function () {
-        if (Quiz.hasEnded()) {
-            this.displayScore()
+        if (quiz.hasEnded()) {
+            this.displayScore();
         }
         else {
-            this.displayQuestion()
-            this.displayChoices()
-            this.displayProgress()
+            this.displayQuestion();
+            this.displayChoices();
+            this.displayProgress();
         }
     },
     displayQuestion: function() {
-        this.populatedIdWithHTML("question", quiz.getCurrentQuestion().text)
+        this.populatedIdWithHTML("question", quiz.getCurrentQuestion().text);
     },
     displayChoices: function(){
         var choices = quiz.getCurrentQuestion().choices;
